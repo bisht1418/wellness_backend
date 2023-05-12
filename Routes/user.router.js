@@ -55,6 +55,8 @@ userRouter.post("/login", async (req, res) => {
             token,
             userName: user.name,
             userId: user._id,
+            height: user.height,
+            weight: user.weight,
           });
         } else {
           res.status(401).json({ message: "Wrong Credentials" });
