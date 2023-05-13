@@ -9,11 +9,14 @@ require("dotenv").config();
 
 //Import userRouter
 const { userRouter } = require("./Routes/user.router");
+const { bmiRouter } = require("./Routes/bmi.router");
+bmiRouter;
 
 app.use(cors());
 app.use(express.json());
 
 app.use("/users", userRouter);
+app.use("/bmi", bmiRouter);
 
 app.listen(process.env.port, async () => {
   try {
